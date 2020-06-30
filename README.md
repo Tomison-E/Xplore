@@ -1,6 +1,5 @@
 # Xplore
-
-A new Flutter project.
+A mobile application designed for the exploration of Nature with wildlife in focus. Useful information regarding the status of wildlife from around the world is made available. The major purpose is to educate users on how human enabled activities tends to affect the ecosystem and what can be done to maintain and preserve these resources.To play a part from the comfort of your home, you can donate to organizations whose key responsibility is to protect wildlife. With the Xplore app you get familiar with wildlife creatures and will be able to support to protect your new found friends.
 
 ## APP VIEW
 ![A](demo/A.PNG)
@@ -8,6 +7,9 @@ A new Flutter project.
 ![B](demo/B.PNG)
 
 ![C](demo/C.PNG)
+
+## ABOUT
+Taking a good look at how the recent pandemic has disrupted the flow of regular activities in every individual, this is just as much similar to what wildlife species go through when human imposed actions causes a disrupt in their ecosystem. I have learnt to value life and the little things around me during this pandemic, to protect endangered species from extinction cause “you don’t know what you have till it’s gone”.
 
 ## Getting Started
 
