@@ -70,7 +70,7 @@ class _View extends State<View> {
                   ],
                 ),
                 Text(
-                  "                            ${_animal.scenes[index.toInt()].location}",
+                  "                ${_animal.scenes[index.toInt()].location}",
                   style: TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
