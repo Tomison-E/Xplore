@@ -1,8 +1,8 @@
-# explore
+# Xplore
 
 A new Flutter project.
 
-## Getting Started
+## APP VIEW
 ![A](demo/A.PNG)
 
 ![B](demo/B.PNG)
