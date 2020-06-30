@@ -49,6 +49,14 @@ class _Habitat extends State<Habitat> with TickerProviderStateMixin{
   }
 
   @override
+  void didUpdateWidget(Habitat oldWidget) {
+    if (widget.currentAnimalIndex != oldWidget.currentAnimalIndex) {
+      _animal = Database.animalData[widget.currentAnimalIndex];
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     _tabController.dispose();
@@ -62,7 +70,7 @@ class _Habitat extends State<Habitat> with TickerProviderStateMixin{
       child: Column(
      children: [
        SizedBox(height: 30),
-       Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),child:TabBar(controller: _tabController,indicatorColor: _animal.primaryColor,labelColor: _animal.primaryColor,unselectedLabelColor: Color.fromRGBO(73, 73, 73, 1.0),
+       Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),child:TabBar(controller: _tabController,indicatorColor: _animal.primaryColor,labelColor: _animal.primaryColor,unselectedLabelColor: Color.fromRGBO(134, 134, 134, 1.0),
          tabs: _animal.environment.map((e) =>  Column(
            children: <Widget>[
              Text(e.habitation.name,style: TextStyle(fontSize: 20)),

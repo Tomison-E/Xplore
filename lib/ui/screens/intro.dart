@@ -1,3 +1,4 @@
+import 'package:explore/ui/screens/donate.dart';
 import 'package:explore/utils/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,16 @@ class Intro extends StatefulWidget {
   void dispose() {
     _sc.dispose();
     super.dispose();
+  }
+
+  void moveToFirstScreen(){
+    _sc.animateTo(0.0,duration: Duration(milliseconds: 1000),curve: Curves.easeIn);
+  }
+  void moveToSecondScreen(){
+    _sc.animateTo(SizeConfig.blockSizeVertical*100,duration: Duration(milliseconds: 1000),curve: Curves.easeIn);
+  }
+  void moveTolastScreen(){
+    _sc.animateTo(SizeConfig.blockSizeVertical*200,duration: Duration(milliseconds: 1000),curve: Curves.easeIn);
   }
 
   @override
@@ -76,9 +87,7 @@ class Intro extends StatefulWidget {
              children:[
                Text("EXPLORE",style: TextStyle(color: Color.fromRGBO(132, 130, 140, 1.0),fontSize: 20,letterSpacing: 5.0),),
                Text(_animals[index].name,style: TextStyle(color: Color.fromRGBO(67, 69, 80, 1.0),fontSize: 50,fontWeight: FontWeight.bold)),
-               IconButton(icon:Icon(CustomIcons.arrow_down,size: 35,color: Color.fromRGBO(132, 130, 140, 1.0)),onPressed: (){
-                 _sc.animateTo(SizeConfig.blockSizeVertical*100,duration: Duration(milliseconds: 1000),curve: Curves.easeIn);
-                 })
+               IconButton(icon:Icon(CustomIcons.arrow_down,size: 35,color: Color.fromRGBO(132, 130, 140, 1.0)),onPressed: ()=>moveToSecondScreen())
             ],mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             ),constraints: BoxConstraints.expand(),
             ),flex: 3,fit: FlexFit.tight,
@@ -89,8 +98,12 @@ class Intro extends StatefulWidget {
     ),height: SizeConfig.blockSizeVertical*100),
     SizedBox(
     child:
-    Home(currentAnimalIndex: index),
-        height: SizeConfig.blockSizeVertical*100)
+    Home(currentAnimalIndex: index,firstScreen: moveToFirstScreen,lastScreen: moveTolastScreen),
+        height: SizeConfig.blockSizeVertical*100),
+    SizedBox(
+              child:
+              Donate(currentAnimalIndex: index,secondScreen: moveToSecondScreen),
+              height: SizeConfig.blockSizeVertical*100)
     ]),physics: NeverScrollableScrollPhysics(),controller: _sc,);
   }
 

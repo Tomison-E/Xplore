@@ -7,13 +7,14 @@ class PageSelector extends StatefulWidget {
   final List<int> pages;
   final int index;
   final Color color;
-
+  final VoidCallback lastScreen;
   const PageSelector({
     Key key,
     this.pages,
     this.index,
     this.color,
     @required this.screenSize,
+    this.lastScreen
   }) : super(key: key);
 
   final Size screenSize;
@@ -84,7 +85,8 @@ class PageSelectorState extends State<PageSelector>
         opacity: _controller,
           child: */Container(
             padding: const EdgeInsets.only(top: 40.0),
-            child: Row(
+            child: GestureDetector(
+    child:Row(
                 children:[
                   Text(
                     'Donate',
@@ -94,8 +96,8 @@ class PageSelectorState extends State<PageSelector>
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  IconButton(icon: Icon(Icons.keyboard_arrow_down,color: Colors.white), onPressed: (){},padding: EdgeInsets.only(left:1),)
-                ],mainAxisSize: MainAxisSize.min,mainAxisAlignment: MainAxisAlignment.center),
+                   Icon(Icons.keyboard_arrow_down,color: Colors.white)
+                ],mainAxisSize: MainAxisSize.min,mainAxisAlignment: MainAxisAlignment.center),onTap: ()=>widget.lastScreen()),
           ),
     );
   }

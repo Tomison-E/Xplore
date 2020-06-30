@@ -52,6 +52,7 @@ flutter:
    - assets/habitat/
    - assets/animals/
    - assets/views/
+   - assets/donate/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -71,9 +72,16 @@ flutter:
          - asset: assets/fonts/PTSerif-Regular.ttf
          - asset: assets/fonts/PTSerif-Italic.ttf
            style: italic
+     - family: Poppins
+       fonts:
+          - asset: assets/fonts/Poppins-Regular.ttf
+
      - family:  MyFlutterAppIcons
        fonts:
          - asset: assets/fonts/MyFlutterAppIcons.ttf
+     - family:  MyFlutterAppIcon
+       fonts:
+         - asset: assets/fonts/MyFlutterAppIcon.ttf
      - family:  MyFlutterApp
        fonts:
          - asset: assets/fonts/MyFlutterApp.ttf

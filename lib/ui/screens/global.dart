@@ -42,6 +42,14 @@ class _Global extends State<Global> with SingleTickerProviderStateMixin{
   }
 
   @override
+  void didUpdateWidget(Global oldWidget) {
+    if (widget.currentAnimalIndex != oldWidget.currentAnimalIndex) {
+      _animal = Database.animalData[widget.currentAnimalIndex];
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -56,20 +64,21 @@ class _Global extends State<Global> with SingleTickerProviderStateMixin{
       children: <Widget>[
         SizedBox(height: 15),
         Text("${_animal.population[_animation.value]}",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white)),
-        SizedBox(height: 10.0),
+        SizedBox(height: 30.0),
         Expanded(child:
           Column(children:[
-            ImageIcon(AssetImage("assets/globe/globe-${_animation.value}.png"),size: 200,color: _animal.primaryColor),
+          Expanded(child:  SizedBox.expand(
+          child:ImageIcon(AssetImage("assets/globe/globe-${_animation.value}.png"),color: _animal.primaryColor))),
            Row(
             children: <Widget>[
-              Flexible(child: Text("${years[_animation.value+3]}\n\n",style: TextStyle(color: Color.fromRGBO(73, 73, 73, 1.0),fontSize: 15),textAlign: TextAlign.center),fit: FlexFit.tight),
-              Flexible(child: Text("${years[_animation.value+2]}\n",style: TextStyle(color: Color.fromRGBO(73, 73, 73, 1.0),fontSize: 20),textAlign: TextAlign.center),fit: FlexFit.tight),
+              Flexible(child: Text("${years[_animation.value+3]}\n\n",style: TextStyle(color: Color.fromRGBO(79, 79, 79, 1.0),fontSize: 15),textAlign: TextAlign.center),fit: FlexFit.tight),
+              Flexible(child: Text("${years[_animation.value+2]}\n",style: TextStyle(color: Color.fromRGBO(102, 102, 102, 1.0),fontSize: 20),textAlign: TextAlign.center),fit: FlexFit.tight),
               Flexible(child: Text("${years[_animation.value+1]}",style: TextStyle(color: _animal.primaryColor,fontSize: 25,fontWeight: FontWeight.bold),textAlign: TextAlign.center),fit: FlexFit.tight),
-              Flexible(child: Text("${years[_animation.value]==0?"":years[_animation.value]}\n",style: TextStyle(color: Color.fromRGBO(73, 73, 73, 1.0),fontSize: 20),textAlign: TextAlign.center),fit: FlexFit.tight),
-              Flexible(child: Text("${years[_animation.value-1]==0?"":years[_animation.value-1]}\n\n",style: TextStyle(color: Color.fromRGBO(73, 73, 73, 1.0),fontSize: 15),textAlign: TextAlign.center),fit: FlexFit.tight),
+              Flexible(child: Text("${years[_animation.value]==0?"":years[_animation.value]}\n",style: TextStyle(color: Color.fromRGBO(102, 102, 102, 1.0),fontSize: 20),textAlign: TextAlign.center),fit: FlexFit.tight),
+              Flexible(child: Text("${years[_animation.value-1]==0?"":years[_animation.value-1]}\n\n",style: TextStyle(color: Color.fromRGBO(79, 79, 79, 1.0),fontSize: 15),textAlign: TextAlign.center),fit: FlexFit.tight),
             ],mainAxisAlignment: MainAxisAlignment.center,
           ),
-        ],mainAxisAlignment: MainAxisAlignment.center)),
+        ],mainAxisAlignment: MainAxisAlignment.start)),
 
         SizedBox(height: 20),
       ],mainAxisAlignment: MainAxisAlignment.start,
