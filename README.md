@@ -3,6 +3,13 @@
 A new Flutter project.
 
 ## Getting Started
+![A](demo/A.PNG)
+
+![B](demo/B.PNG)
+
+![C](demo/C.PNG)
+
+## Getting Started
 
 This project is a starting point for a Flutter application.
 
