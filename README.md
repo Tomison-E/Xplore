@@ -2,7 +2,7 @@
 A mobile application designed for the exploration of Nature with wildlife in focus. Useful information regarding the status of wildlife from around the world is made available. The major purpose is to educate users on how human enabled activities tends to affect the ecosystem and what can be done to maintain and preserve these resources.To play a part from the comfort of your home, you can donate to organizations whose key responsibility is to protect wildlife. With the Xplore app you get familiar with wildlife creatures and will be able to support to protect your new found friends.
 
 
-##video link
+## Video Link
 https://www.youtube.com/watch?v=iAhzxUtX_C8&feature=youtu.be
 
 ## APP VIEW
